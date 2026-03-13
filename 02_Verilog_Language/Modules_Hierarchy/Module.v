@@ -13,6 +13,7 @@
 
 // Using named port connections:
 // .port_name(signal_name)
+// can use inst2 or inst1 same results; 
 
 module top_module ( input a, input b, output out );
 
