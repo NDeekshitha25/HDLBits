@@ -8,20 +8,39 @@
 // B: x == y (XNOR)
 // Direct logic used instead of instantiation (accepted in HDLBits)
 
-module top_module (input x, input y, output z);
+module top_module(
+	input x,
+	input y,
+	output z);
 
-    wire a1, a2, b1, b2;
-    wire y1, y2;
+	wire o1, o2, o3, o4;
+	
+	A ia1 (x, y, o1);
+	B ib1 (x, y, o2);
+	A ia2 (x, y, o3);
+	B ib2 (x, y, o4);
+	
+	assign z = (o1 | o2) ^ (o3 & o4);
 
-    assign a1 = (x ^ y) & x;
-    assign a2 = (x ^ y) & x;
+	// Or you could simplify the circuit including the sub-modules:
+	// assign z = x|~y;
+	
+endmodule
 
-    assign b1 = (x == y);
-    assign b2 = (x == y);
+module A (
+	input x,
+	input y,
+	output z);
 
-    assign y1 = a1 | b1;
-    assign y2 = a2 & b2;
+	assign z = (x^y) & x;
+	
+endmodule
 
-    assign z = y1 ^ y2;
+module B (
+	input x,
+	input y,
+	output z);
+
+	assign z = ~(x^y);
 
 endmodule
