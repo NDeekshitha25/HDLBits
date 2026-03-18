@@ -14,5 +14,8 @@ module top_module (
 );
 
     assign z = ((~x) & (~y)) | (x & y);
+    // also can be written as assign z = (x==y);
 
 endmodule
+
+
