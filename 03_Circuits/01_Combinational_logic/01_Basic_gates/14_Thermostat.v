@@ -1,8 +1,6 @@
 /*
 ============================================================
 HDLBits Problem: Thermostat
-Path:
-hdlbits/03_circuits/0_combinational_logic/01_basic_gate/
 
 Description:
 A thermostat controls:
