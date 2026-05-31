@@ -36,6 +36,10 @@ Difference from Rotate:
     - Rotate wraps bits around
     - Shift discards bits
 
+<< = logical left shift
+>> = logical right shift
+>>> = arithmetic right shift
+
 ============================================================
 */
 
